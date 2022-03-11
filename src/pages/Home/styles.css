@@ -2,25 +2,22 @@
   padding: 40px;
 }
 
-.start-button, .start-button:hover {
-  color: #fff;
-  background-color: #1890ff;
+.text-container {
+  letter-spacing: 0.02em;
 }
 
-.text-secondary {
-  display: flex;
-  color: #000000;
+.text-container h1 {
+  color: black;
   font-size: 48px;
-  line-height: 64px;
-  align-items: center;
-  letter-spacing: 0.02em;
 }
 
-.text-tertiary {
-  display: flex;
-  font-size: 24px;
+.text-container p {
   color: #7e7e7e;
-  line-height: 40px;
-  align-items: center;
-  letter-spacing: 0.02em;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.start-button {
+  margin-top: 30px;
+  color: #fff;
 }

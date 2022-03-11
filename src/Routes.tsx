@@ -1,22 +1,20 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import GitSearch from './pages/GitSearch';
+import GithubSearch from './pages/GithubSearch';
 import Home from './pages/Home';
 
-
 const Routes = () => (
-    <BrowserRouter>
-      <Navbar />
-      <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/gitsearch">
-          <GitSearch />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-  );
-  
-  export default Routes;
-  
+  <BrowserRouter>
+    <Navbar />
+    <Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/githubSearch">
+        <GithubSearch />
+      </Route>
+    </Switch>
+  </BrowserRouter>
+);
+
+export default Routes;

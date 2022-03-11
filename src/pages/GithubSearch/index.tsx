@@ -1,8 +1,9 @@
 import './styles.css';
-import ResultCard from '../../components/ResultCard';
+
 import { useState } from 'react';
 import axios from 'axios';
 import CardLoader from './CardLoader';
+import ResultCard from '../../components/ResultCard';
 
 type FormData = {
   username: string;
@@ -16,7 +17,7 @@ type Profile = {
   avatar_url: string;
 };
 
-const GitSearch = () => {
+const GithubSearch = () => {
   const [profile, setProfile] = useState<Profile>();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -35,7 +36,6 @@ const GitSearch = () => {
     event.preventDefault();
 
     setIsLoading(true);
-
     axios
       .get(`https://api.github.com/users/${formData.username}`)
       .then((response) => {
@@ -54,7 +54,7 @@ const GitSearch = () => {
   return (
     <div className="git-search-container">
       <div className="container search-container">
-        <h1>Encontre um perfil no Github</h1>
+        <h1>Encontre um perfil Github</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-container">
             <input
@@ -72,8 +72,10 @@ const GitSearch = () => {
         </form>
       </div>
       <div className="container result-container">
-        {isLoading ? <CardLoader /> :
-            <form className="container info-container">
+        {isLoading ? (
+          <CardLoader />
+        ) : (
+          <form className="container info-container">
             {profile && (
               <>
                 <div>
@@ -81,20 +83,29 @@ const GitSearch = () => {
                     className="img-container"
                     src={profile.avatar_url}
                     alt={profile.name}
-                  /></div>
+                  />
+                </div>
                 <div className="txt-container">
                   <h6>Informações</h6>
 
-                  <ResultCard title="Perfil" description={profile.html_url} />
-                  <ResultCard title="Seguidores" description={profile.followers} />
-                  <ResultCard title="Localidade" description={profile.location} />
-                  <ResultCard title="Nome" description={profile.name} />
+                  <ResultCard title="Perfil:" description={profile.html_url} />
+                  <ResultCard
+                    title="Seguidores:"
+                    description={profile.followers}
+                  />
+                  <ResultCard
+                    title="Localidade:"
+                    description={profile.location}
+                  />
+                  <ResultCard title="Nome:" description={profile.name} />
                 </div>
               </>
             )}
           </form>
-        }
-        </div>
+        )}
+      </div>
     </div>
   );
 };
+
+export default GithubSearch;
