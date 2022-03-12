@@ -15,3 +15,5 @@ https://www.figma.com/file/YhRCC5Ly0tWOcxwxjheTJ3/desafio-github-api
 https://api.github.com/users/acenelio
 
 <h6>link: https://github.com/Cunharodrigues/tarefa-github-api</h6>
+
+![githubAPI](https://user-images.githubusercontent.com/30321724/158026318-823a353c-57b2-412c-ac29-c17139404fd4.PNG)
